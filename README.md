@@ -5,15 +5,15 @@ Implementar iteradores en el menu
 Implementación:
 ``` python
 class OrderIterable():
-    def __init__(self, order_items: Order):
-        self.order_items = order_items
+    def __init__(self, order: Order):
+        self.order = order
         self.index = 0
     def __iter__(self):
         return self
 
     def __next__(self):
-        if self.index < len(self.order_items.items):
-            item = self.order_items.items[self.index]
+        if self.index < len(self.order.items):
+            item = self.order.items[self.index]
             self.index += 1
             return item
         else:
