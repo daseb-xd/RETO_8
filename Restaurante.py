@@ -73,7 +73,22 @@ class Order():
 
         order_str += f"-------------------\nNet Total: {self.get_bill():.2f}\n-------------------"
         return order_str
-    
+# RETO 9
+class OrderIterable():
+    def __init__(self, order_items: Order):
+        self.order_items = order_items
+        self.index = 0
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.index < len(self.order_items.items):
+            item = self.order_items.items[self.index]
+            self.index += 1
+            return item
+        else:
+            raise StopIteration
+
 if __name__ == "__main__":
 
     #Usage case
@@ -97,8 +112,8 @@ if __name__ == "__main__":
         Dessert("Lemon Cheesecake", 5.00)
     ])
     #17 items, should apply a 11% discount
-    
-    print(order)
+    for item in OrderIterable(order):
+        print(item)
 
 
 
