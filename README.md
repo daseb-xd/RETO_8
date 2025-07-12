@@ -1,2 +1,5 @@
 # RETO_8
-Reto 8 de la clase de la clase de programacion orientada a objetos
+Reto 8 de la clase de la clase de programacion orientada a objetos:
+
+Implementar iteradores en el menu
+
